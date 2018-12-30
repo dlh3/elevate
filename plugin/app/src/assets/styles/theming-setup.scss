@@ -26,4 +26,7 @@
 	@include elevate-custom-theme($dark-theme);
 }
 
+// Improve comfort/readability of light themes by overriding card background to match app-bar
+$mat-light-theme-background: map-merge($mat-light-theme-background, (card: map_get($mat-grey, 100)));
+
 @import "./themes/all";
