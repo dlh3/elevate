@@ -4,6 +4,7 @@
 
 	$primary: map-get($theme, primary);
 	$background: map-get($theme, background);
+	$is-dark: map-get($theme, is-dark);
 
 	#logo {
 		position: absolute;
@@ -19,5 +20,17 @@
 	.mat-background,
 	.mat-icon.mat-background {
 		color: mat-color($background, background);
+	}
+
+	.theme-menu {
+		.mat-menu-content, .theme-menu-item {
+			$theme-menu-bg-hue: if($is-dark, 700, 200);
+			background-color: mat-color($mat-grey, $theme-menu-bg-hue);
+		}
+
+		.theme-menu-item:hover {
+			$theme-menu-bg-hover-hue: if($is-dark, 600, 300);
+			background-color: mat-color($mat-grey, $theme-menu-bg-hover-hue) !important;
+		}
 	}
 }
