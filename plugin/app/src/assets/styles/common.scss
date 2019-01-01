@@ -9,3 +9,22 @@ html, body, mat-sidenav-container {
 mat-card {
 	margin: $default-margin;
 }
+
+.mat-swatch {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-right: 3px;
+}
+
+.mat-swatch mat-icon.mat-primary {
+	transform: translateX(-80px) scaleX(-1);
+}
+
+.mat-swatch mat-icon.mat-accent {
+	transform: translateX(-40px);
+}
+
+.mat-swatch mat-icon.mat-background {
+	transform: scale(2);
+}
