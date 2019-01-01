@@ -3,6 +3,7 @@
 @mixin app-theming($theme) {
 
 	$primary: map-get($theme, primary);
+	$background: map-get($theme, background);
 
 	#logo {
 		position: absolute;
@@ -12,5 +13,11 @@
 		background-color: mat-color($primary);
 		-webkit-mask: url("assets/icons/elevate.svg") no-repeat center;
 		mask: url("assets/icons/elevate.svg") no-repeat center;
+	}
+
+	// extra specificity for .mat-icon.mat-background is necessary to override other styles on menu items
+	.mat-background,
+	.mat-icon.mat-background {
+		color: mat-color($background, background);
 	}
 }
