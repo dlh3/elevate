@@ -7,7 +7,8 @@
 @import "../../app/athlete-settings-consistency-ribbon/athlete-settings-consistency-ribbon.component.theme";
 
 @mixin elevate-custom-theme($name, $theme) {
-	.#{$name} {
+	.#{$name},
+	.mat-swatch.#{$name} {
 		@include angular-material-theme($theme);
 		@include native-web-elements($theme);
 		@include app-theming($theme);
