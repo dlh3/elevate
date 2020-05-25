@@ -95,11 +95,17 @@
 				<mat-icon>palette</mat-icon>
 			</button>
 
-			<mat-menu #themeMenu="matMenu">
+			<mat-menu #themeMenu="matMenu"
+					  class="theme-menu">
 
 				<button mat-menu-item
 						*ngFor="let theme of themeMenuItems"
 						(click)="onThemeSelect(theme.name)">
+					<span [ngClass]="['mat-swatch', theme.name]">
+						<mat-icon color="background">stop</mat-icon>
+						<mat-icon color="accent">invert_colors</mat-icon>
+						<mat-icon color="primary">invert_colors</mat-icon>
+					</span>
 					{{theme.label}}
 					<mat-icon *ngIf="theme.name === this.currentTheme">check</mat-icon>
 				</button>
